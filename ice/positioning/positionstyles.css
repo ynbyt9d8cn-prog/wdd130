@@ -1,0 +1,240 @@
+
+.content1 {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  justify-items: center;           
+  gap: 20px;                       
+}
+
+
+.red1, .blue1 {
+  width: 100%;
+  height: 100px;
+}
+
+.red1    { background: red;   grid-column: 1 / 3; }
+.blue1   { background: blue;  grid-column: 1 / 3; }
+
+
+.green1, .yellow1 {
+  width: 200px;
+  height: 200px;
+}
+
+.green1  { background: green; }
+.yellow1 { background: gold;  }
+
+   Each tile is 100x100, so we span 2 cols/rows (overlap by offsetting starts). */
+.content2 {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px; 
+  grid-auto-rows: 50px; 
+  gap: 0;               
+  position: relative;
+  width: max-content;   
+}
+
+.red2, .green2, .yellow2, .blue2 {
+  width: 100px;
+  height: 100px;
+}
+
+.red2    { background: red;    grid-column: 1 / 3; grid-row: 1 / 3; z-index: 4; }
+.green2  { background: green;  grid-column: 2 / 4; grid-row: 2 / 4; z-index: 3; }
+.yellow2 { background: gold;   grid-column: 3 / 5; grid-row: 3 / 5; z-index: 2; }
+.blue2   { background: blue;   grid-column: 4 / 6; grid-row: 4 / 6; z-index: 1; }
+
+.content3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;  
+  row-gap: 20px;
+}
+
+.red3, .green3, .yellow3, .blue3 { width: 100%; }
+
+.red3 {
+  height: 100px;
+  background: red;
+  grid-column: 1 / 3; 
+}
+.green3 {
+  height: 200px;
+  background: green;
+  grid-column: 1;     
+}
+.yellow3 {
+  height: 200px;
+  background: gold;
+  grid-column: 2;     
+}
+.blue3 {
+  height: 100px;
+  background: blue;
+  grid-column: 1 / 3; 
+}
+
+.content4 {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-auto-rows: 100px; 
+  gap: 16px;
+  height: auto; 
+  width: max-content;
+}
+
+.red4, .green4, .yellow4, .blue4 { width: 100%; }
+
+.red4 {
+  background: red;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1;            
+}
+.green4 {
+  background: green;
+  height: 100%;
+  grid-column: 2;
+  grid-row: 1;            
+}
+.yellow4 {
+  background: gold;
+  height: 100%;
+  grid-column: 3;
+  grid-row: 1 / 3;        
+}
+.blue4 {
+  background: blue;
+  height: 100%;
+  grid-column: 1 / 3;     
+  grid-row: 2 / 4;        
+}
+
+
+.content5 {
+  
+}
+
+.green5 {
+  width: 200px;
+  height: 200px;
+  background: green;
+  float: left;           
+  margin: 0 16px 12px 0; 
+}
+
+.red5 {
+  width: 100%;
+  height: 20px;
+  background: red;
+  margin-bottom: 12px;
+}
+.blue5 {
+  width: 100%;
+  height: 20px;
+  background: blue;
+  clear: both;           
+  margin-top: 12px;
+}
+
+
+.yellow5 {
+  background: gold;
+  padding: 12px;
+  line-height: 1.4;
+}
+
+
+.content6 {
+  display: grid;
+  grid-template-columns: repeat(6, 100px); 
+  grid-auto-rows: 100px;
+  gap: 0;
+  width: max-content;
+  position: relative;
+}
+
+
+.red6, .green6, .yellow6, .blue6 {
+  width: 200px;
+  height: 200px;
+}
+
+.red6    { background: red;    grid-column: 2 / 4; grid-row: 2 / 4; z-index: 4; }
+.green6  { background: green;  grid-column: 3 / 5; grid-row: 1 / 3; z-index: 3; }
+.yellow6 { background: gold;   grid-column: 4 / 6; grid-row: 2 / 4; z-index: 2; }
+.blue6   { background: blue;   grid-column: 3 / 5; grid-row: 3 / 5; z-index: 1; }
+
+
+.activity {
+  width: 70%; 
+  margin: 20px auto; 
+  font-family: Arial, sans-serif; 
+  border: 1px solid black; 
+  padding: 10px; 
+  clear:both; 
+  overflow: auto;
+} 
+
+.hint {
+  border: 1px solid grey;
+  background: #e0e0e0;
+  padding: .5em;
+  position: relative;
+  margin: 1em 0;
+}
+.hint h3 {
+  margin: 0;
+}
+.hint:hover {
+  background: #d0d0d0;
+}
+.hint > div {
+  display: none;
+}
+
+.hint input[type=checkbox] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.hint input[type=checkbox]:checked ~ div {
+  display: block;
+}
+
+.hint i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 16px;
+  right: 10px;
+  top: -3px;
+}
+.hint i:before, .hint i:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 3px;
+  height: 9px;
+}
+.hint i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+.hint i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+.hint input[type=checkbox]:checked ~ i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+.hint input[type=checkbox]:checked ~ i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+.hint a {
+  position: relative;
+  z-index: 1;
+}

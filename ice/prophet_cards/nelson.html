@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Russell M. Nelson</title>
+
+  <!-- Optional: pretty script font fallback for the quote -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1) Page background */
+    body {
+      margin: 0;
+      background: #FFECD7; /* peach */
+      font-family: Helvetica, Arial, sans-serif;
+      color: #fff;
+    }
+
+    /* 2) Centered card shell */
+    main {
+      min-height: 100svh;            /* full viewport height */
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      background: #008DB1;           /* card color */
+      border: 6px solid #004E63;     /* border color */
+      border-radius: 20px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.15);
+      width: 100%;
+      max-width: 440px;              /* keeps it readable */
+      padding: 28px 22px 28px;
+      text-align: center;
+    }
+
+    /* 3) Title & subtitle */
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: clamp(28px, 4.5vw, 40px);
+      line-height: 1.1;
+      color: #FFFFFF;                 /* title color */
+      font-weight: 700;
+    }
+    .subtitle {
+      margin: 0 0 20px 0;
+      color: #91E4FB;                /* subtitle color */
+      font-size: 16px;
+      line-height: 1.35;
+    }
+    .subtitle a {
+      color: #91E4FB;
+      text-decoration: underline;
+    }
+
+    /* 4) Portrait */
+    .portrait {
+      width: 90%;
+      margin: 0 auto 18px;
+      border: 6px solid #ffffff;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* 5) Facts list */
+    .facts {
+      list-style: disc inside;
+      margin: 8px 0 16px;
+      padding: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #FFFFFF;                /* list color */
+    }
+
+    /* 6) Quote */
+    blockquote {
+      margin: 10px auto 0;
+      width: 92%;
+      color: #FFD783;                /* quote color */
+      font-size: 22px;
+      line-height: 1.35;
+      font-family: "Brush Script MT", "Nanum Brush Script", cursive;
+      quotes: "“" "”" "‘" "’";
+    }
+    blockquote:before { content: open-quote; }
+    blockquote:after  { content: close-quote; }
+    cite {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+      opacity: .85;
+      color: #FFD783;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="card" aria-labelledby="title">
+      <h1 id="title">Russell M. Nelson</h1>
+      <p class="subtitle">
+        17th President of the Church of Jesus Christ of Latter-day Saints —
+        <a href="https://www.churchofjesuschrist.org" target="_blank" rel="noopener">churchofjesuschrist.org</a>
+      </p>
+
+      <!-- 4) Image -->
+      <img class="portrait" src="images/russell_nelson.png" alt="Russell M. Nelson">
+
+      <!-- 5) Facts -->
+      <ul class="facts">
+        <li><strong>Born:</strong> Sep 9, 1924</li>
+        <li><strong>Apostle:</strong> Apr 7, 1984</li>
+        <li><strong>Prophet:</strong> Jan 14, 2018</li>
+      </ul>
+
+      <!-- 6) Quote -->
+      <blockquote>
+        I urge you to devote time each week — for the rest of your life — to increase your
+        understanding of the Atonement of Jesus Christ.
+        <cite>— Russell M. Nelson</cite>
+      </blockquote>
+    </article>
+  </main>
+</body>
+</html>

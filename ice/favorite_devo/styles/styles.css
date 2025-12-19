@@ -1,0 +1,111 @@
+
+.devo-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #00bcd4;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 0 28px 0;
+  font-size: 0.95rem;
+}
+
+.devo-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 700;
+  color: #004d61;
+  padding: 0 0 .6rem 2px;
+  letter-spacing: .2px;
+}
+
+.devo-table thead th {
+  background: linear-gradient(180deg, #00bcd4, #0097a7);
+  color: #fff;
+  text-align: left;
+  padding: .85rem .9rem;
+  letter-spacing: .2px;
+}
+
+.devo-table tbody td {
+  padding: .75rem .9rem;
+  border-top: 1px solid #e6e6e6;
+}
+
+.devo-table tbody tr:nth-child(even) {
+  background: #eafcff;
+}
+
+.devo-table tbody tr:hover {
+  background: #dffbff;
+}
+
+
+.devo-form {
+  border: 2px solid #00bcd4;
+  border-radius: 8px;
+  padding: 16px 24px;        
+  background: #fdfefe;
+  box-sizing: border-box;    
+}
+
+.devo-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 14px 18px;
+}
+
+.devo-form legend {
+  font-weight: 800;
+  color: #ff7f50;
+  margin-bottom: 6px;
+}
+
+.devo-form label {
+  display: block;
+  font-size: .9rem;
+  color: #004d61;
+}
+
+.devo-form input {
+  width: 100%;
+  padding: .6rem .7rem;
+  border: 1px solid #cfd6de;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.devo-form input:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 .18rem rgba(0, 188, 212, .25);
+}
+
+
+.devo-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  background: linear-gradient(90deg, #00bcd4, #ff7f50);
+  color: #fff;
+  border: none;
+  padding: .7rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #004d61;
+}
+.devo-form button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+
+@media (max-width: 640px) {
+  .devo-form fieldset { grid-template-columns: 1fr; }
+  .content-box { padding: 28px; }
+}

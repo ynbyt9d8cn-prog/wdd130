@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Feed Sign Up</title>
+<style>
+  :root{
+    --bg: #7a5f3f;
+    --phone-blue: #143c8c;
+    --panel: #ffffff;
+    --text: #111827;
+  }
+  body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .wrap{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+  }
+  .phone{
+    width:360px;
+    background:#0b1c3a;
+    border:10px solid var(--phone-blue);
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+  }
+  .hero{
+    position:relative;
+    height:200px;
+    background:url("images/jesus_feeds_5000.jpeg") center/cover no-repeat;
+  }
+  #closeBtn{
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    border:none;
+    background:rgba(0,0,0,.6);
+    color:#fff;
+    cursor:pointer;
+  }
+  .title{
+    position:absolute;
+    bottom:15px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-family:Georgia, serif;
+  }
+  .title h1{
+    margin:0;
+    font-size:24px;
+  }
+  .title p{
+    margin:0;
+    font-size:16px;
+  }
+  .panel{
+    background:var(--panel);
+    padding:20px;
+  }
+  .panel h2{
+    text-align:center;
+    margin-bottom:15px;
+    font-size:18px;
+  }
+  .form-grid{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:10px;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"]{
+    padding:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+  }
+  .inline{
+    display:flex;
+    gap:10px;
+  }
+  .checkbox-row{
+    grid-column:1 / -1;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .actions{
+    grid-column:1 / -1;
+    text-align:center;
+    margin-top:10px;
+  }
+  button[type="submit"]{
+    padding:5px 10px;
+    font-size:12px;
+    cursor:pointer;
+  }
+  .books{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:5px;
+    background:#0b1c3a;
+    padding:10px;
+    text-align:center;
+    color:#e9d9a7;
+    font-size:10px;
+    font-family:Georgia, serif;
+  }
+  .book img{
+    width:100%;
+    height:60px;
+    object-fit:cover;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:4px;
+  }
+  #output{
+    color:white;
+    text-align:center;
+    margin-top:10px;
+    font-size:14px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="phone" id="formContainer">
+      <div class="hero">
+        <button type="button" id="closeBtn">X</button>
+        <div class="title">
+          <h1>Daily Feed</h1>
+          <p>Scripture a Day</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Sign Up for Daily Scripture Feed</h2>
+        <form id="myForm">
+          <div class="form-grid">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Gender:</label>
+            <div class="inline">
+              <label><input type="radio" name="gender" value="male" required> Male</label>
+              <label><input type="radio" name="gender" value="female" required> Female</label>
+            </div>
+
+            <div class="checkbox-row">
+              <label><input type="checkbox" id="newsletter"> Subscribe to newsletter</label>
+            </div>
+            <div class="checkbox-row">
+              <label><input type="checkbox" id="conditions" required> I acknowledge the terms and conditions</label>
+            </div>
+
+            <div class="actions">
+              <button type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="books">
+        <div class="book"><img src="images/old_testament.webp" alt="Old Testament"></div>
+        <div class="book"><img src="images/new_testament.webp" alt="New Testament"></div>
+        <div class="book"><img src="images/book_of_mormon.webp" alt="Book of Mormon"></div>
+        <div class="book"><img src="images/doctrine_and_covenants.webp" alt="Doctrine and Covenants"></div>
+        <div class="book"><img src="images/pearl_of_great_price.webp" alt="Pearl of Great Price"></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="output"></div>
+
+  <script>
+    document.getElementById("closeBtn").addEventListener("click", function () {
+      document.getElementById("formContainer").style.display = "none";
+    });
+
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      let outputHTML = "<h3>Form Submitted:</h3><ul>";
+      formData.forEach((value, key) => {
+        outputHTML += `<li><strong>${key}:</strong> ${value}</li>`;
+      });
+      outputHTML += "</ul>";
+      document.getElementById('output').innerHTML = outputHTML;
+    });
+  </script>
+</body>
+</html>
